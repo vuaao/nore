@@ -1,0 +1,10 @@
+.vscode/
+.idea/
+
+cmake-build-*/
+build*/
+venv/
+
+*.mgc
+imgui.ini
+.DS_Store
