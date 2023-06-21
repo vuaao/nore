@@ -57,4 +57,4 @@ func Setup(isCheckTx bool) *Evmos {
 	}
 
 	return app
-}
+}  
