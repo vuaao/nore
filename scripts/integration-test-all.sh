@@ -178,3 +178,4 @@ if [[ (-z $TEST || $TEST == "rpc") && $RPC_FAIL -ne 0 ]]; then
 else
     exit 0
 fi
+**
