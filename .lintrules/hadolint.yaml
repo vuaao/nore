@@ -1,6 +1,5 @@
 #This is the configuration for hadolint
 #Ignore codes can be taken from error lines produced by hadolint.
-
 ignored:
 #  - DL3009
 #  - DL3003
