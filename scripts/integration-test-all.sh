@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # "stable" mode tests assume data is static
 # "live" mode tests assume data dynamic
 
