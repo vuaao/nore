@@ -47,7 +47,6 @@
             .stack__item__p {{item.desc}}
     tm-help-support
 </template>
-
 <style lang="stylus" scoped>
 /deep/ {
   .container h1 {
