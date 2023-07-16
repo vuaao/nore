@@ -33,7 +33,6 @@ pub enum BlockType {
     /// BlockTree for all epochs.
     Genesis,
 }
-
 #[derive(Deserialize, Serialize, Clone, Debug, PartialEq, Eq, CryptoHasher, BCSCryptoHash)]
 /// Block has the core data of a consensus block that should be persistent when necessary.
 /// Each block must know the id of its parent and keep the QuorurmCertificate to that parent.
