@@ -10,7 +10,6 @@ import (
 	"github.com/tharsis/evmos/app"
 	evmosd "github.com/tharsis/evmos/cmd/evmosd"
 )
-
 func TestInitCmd(t *testing.T) {
 	rootCmd, _ := evmosd.NewRootCmd()
 	rootCmd.SetArgs([]string{
