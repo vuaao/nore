@@ -2,7 +2,6 @@ package main_test
 import (
 	"fmt"
 	"testing"
-
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 	"github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
