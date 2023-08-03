@@ -18,7 +18,6 @@ executors:
     machine:
       image: ubuntu-2004:current
     resource_class: 2xlarge
-
 jobs:
   build-benchmarks:
     executor: ubuntu-xl
