@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 set -ue
 
 DESTDIR=${DESTDIR:-}
