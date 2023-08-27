@@ -1,9 +1,7 @@
 package main_test
-
 import (
 	"fmt"
 	"testing"
-
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 	"github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
@@ -11,7 +9,6 @@ import (
 	"github.com/tharsis/evmos/app"
 	evmosd "github.com/tharsis/evmos/cmd/evmosd"
 )
-
 func TestInitCmd(t *testing.T) {
 	rootCmd, _ := evmosd.NewRootCmd()
 	rootCmd.SetArgs([]string{

@@ -51,4 +51,4 @@ enable_testing()
 add_subdirectory(tests EXCLUDE_FROM_ALL)
 
 # Configure packaging
-createPackage()
+createPackage()  

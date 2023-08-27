@@ -1,11 +1,10 @@
 version: 2.1
-
+============
 orbs:
   aws-cli: circleci/aws-cli@2.1.0
   aws-ecr: circleci/aws-ecr@7.3.0
   gcp-gcr: circleci/gcp-gcr@0.15.0
   kubernetes: circleci/kubernetes@1.3.0
-
 executors:
   ubuntu-medium:
     machine:
@@ -19,7 +18,6 @@ executors:
     machine:
       image: ubuntu-2004:current
     resource_class: 2xlarge
-
 jobs:
   build-benchmarks:
     executor: ubuntu-xl

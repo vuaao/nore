@@ -6,7 +6,6 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/simapp"
 	"github.com/tharsis/ethermint/encoding"
-
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/libs/log"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
@@ -57,4 +56,4 @@ func Setup(isCheckTx bool) *Evmos {
 	}
 
 	return app
-}
+}  
