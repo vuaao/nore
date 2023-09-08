@@ -1,5 +1,4 @@
 name: NightlyBuilds
-
 env:
   # Force the stdout and stderr streams to be unbuffered
   PYTHONUNBUFFERED: 1
