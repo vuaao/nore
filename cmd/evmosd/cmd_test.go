@@ -21,3 +21,4 @@ func TestInitCmd(t *testing.T) {
 	err := svrcmd.Execute(rootCmd, app.DefaultNodeHome)
 	require.NoError(t, err)
 }
+
