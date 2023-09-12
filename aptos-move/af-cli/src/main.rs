@@ -13,7 +13,6 @@ use move_deps::{
 pub struct AfCli {
     #[structopt(flatten)]
     move_args: Move,
-
     #[structopt(subcommand)]
     cmd: AfCommands,
 }
