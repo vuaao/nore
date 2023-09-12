@@ -98,7 +98,6 @@ paths:
             If not present, the latest version is used.
 
             The Aptos nodes prune account state history, via a configurable time window (link).
-
             If the requested data has been pruned, the server responds with a 404
           content:
             application/json:
