@@ -150,6 +150,7 @@ private:
 
     size_t max_size;
 
+
     mutable std::mutex objects_mutex;
     std::condition_variable condition_variable;
     size_t allocated_objects_size = 0;
