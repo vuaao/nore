@@ -3,7 +3,6 @@ name: DocsReleaseChecks
 env:
   # Force the stdout and stderr streams to be unbuffered
   PYTHONUNBUFFERED: 1
-
 concurrency:
   group: master-release
   cancel-in-progress: true
