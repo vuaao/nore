@@ -2,7 +2,6 @@
 
 use anyhow::Result;
 use clap::Args;
-
 use crate::{generate_cli_help, generate_json_schema, generate_options, generate_rules_table};
 
 #[derive(Args)]
