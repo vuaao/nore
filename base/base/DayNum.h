@@ -1,5 +1,4 @@
 #pragma once
-
 #include <base/types.h>
 #include <base/strong_typedef.h>
 
