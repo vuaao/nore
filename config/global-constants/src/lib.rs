@@ -25,3 +25,6 @@ pub const WAYPOINT: &str = "waypoint";
 pub const GENESIS_WAYPOINT: &str = "genesis-waypoint";
 pub const MOVE_MODULES: &str = "move_modules";
 pub const MIN_PRICE_PER_GAS_UNIT: &str = "min_price_per_gas_unit";
+# combine swagger files
+# uses nodejs package `swagger-combine`.
+# all the individual swagger files need to be configured in `config.json` for merging
