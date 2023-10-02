@@ -102,6 +102,12 @@ template <typename T> inline Decimal<T> operator* (const Decimal<T> & x, const D
 template <typename T> inline Decimal<T> operator/ (const Decimal<T> & x, const Decimal<T> & y) { return x.value / y.value; }
 template <typename T> inline Decimal<T> operator- (const Decimal<T> & x) { return -x.value; }
 
+const Decimal<T> & operator += (const T & x) { value += x; return *this; }
+    const Decimal<T> & operator -= (const T & x) { value -= x; return *this; }
+    const Decimal<T> & operator *= (const T & x) { value *= x; return *this; }
+    const Decimal<T> & operator /= (const T & x) { value /= x; return *this; }
+    const Decimal<T> & operator %= (const T & x) { value %= x; return *this; }
+
 /// Distinguishable type to allow function resolution/deduction based on value type,
 /// but also relatively easy to convert to/from Decimal64.
 class DateTime64 : public Decimal64
