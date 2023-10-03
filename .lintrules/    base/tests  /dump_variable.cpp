@@ -44,6 +44,9 @@ int main(int, char **)
     auto tuple = std::make_tuple(1, 2, 3);
     DUMP(tuple);
 
+    auto pair = std::make_pair(1, 2);
+    DUMP(pair);
+
     std::map<int, std::string> map{{1, "hello"}, {2, "world"}};
     DUMP(map);
 
