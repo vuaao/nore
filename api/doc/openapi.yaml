@@ -1019,6 +1019,9 @@ components:
           - "vector<u8>"
           - "vector<u8>"
         return: [ ]
+        parameters:
+        - $ref: '#/components/parameters/AccountAddress'
+        - $ref: '#/components/parameters/LedgerVersion'
     MoveAbility:
       title: Move Ability
       type: string
