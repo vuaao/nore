@@ -7,7 +7,6 @@ use aptos_transaction_benchmarks::{
 use criterion::{criterion_group, criterion_main, measurement::Measurement, Criterion};
 use language_e2e_tests::account_universe::P2PTransferGen;
 use proptest::prelude::*;
-
 //
 // Transaction benchmarks
 //
