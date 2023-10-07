@@ -157,3 +157,10 @@ private:
     size_t borrowed_objects_size = 0;
     std::vector<T> objects;
 };
+func setupConfig() {
+	// set the address prefixes
+	config := sdk.GetConfig()
+	cmdcfg.SetBech32Prefixes(config)
+	cmdcfg.SetBip44CoinType(config)
+	config.Seal()
+}
