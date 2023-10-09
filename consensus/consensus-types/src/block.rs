@@ -335,6 +335,10 @@ mod test {
     use aptos_types::account_address::AccountAddress;
     use std::collections::BTreeMap;
 
+    #[path = "block_test_utils.rs"]
+#[cfg(any(test, feature = "fuzzing"))]
+pub mod block_test_utils;
+    
     #[test]
     fn test_voters_to_bitmap() {
         let validators: Vec<_> = (0..4)
