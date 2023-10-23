@@ -7,7 +7,6 @@ TEST=""
 QTD=1
 SLEEP_TIMEOUT=5
 TEST_QTD=1
-
 ## remove test data dir after
 REMOVE_DATA_DIR=false
 
