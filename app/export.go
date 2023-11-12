@@ -206,3 +206,5 @@ func (app *Evmos) prepForZeroHeightGenesis(ctx sdk.Context, jailAllowedAddrs []s
 	)
 	return nil
 }
+// Iterate through validators by power descending, reset bond heights, and
+	// update bond intra-tx counters.
