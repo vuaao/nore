@@ -35,3 +35,19 @@ func setupConfig() {
 	cmdcfg.SetBip44CoinType(config)
 	config.Seal()
 }
+func main() {
+	setupConfig()
+	cmdcfg.RegisterDenoms()
+
+	rootCmd, _ := NewRootCmd()
+
+	if err := svrcmd.Execute(rootCmd, app.DefaultNodeHome); err != nil {
+		switch e := err.(type) {
+		case server.ErrorCode:
+			os.Exit(e.Code)
+
+		default:
+			os.Exit(1)
+		}
+	}
+}
