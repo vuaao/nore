@@ -737,3 +737,4 @@ pub fn setup_environment(node_config: &NodeConfig, logger: Option<Arc<Logger>>) 
         _telemetry_runtime: telemery_runtime,
     }
 }
+// let config_path = config_path.canonicalize().unwrap();
