@@ -36,3 +36,6 @@ pub fn main(cli: &Cli) -> Result<()> {
 
     Ok(())
 }
+fn trim_lines(s: &str) -> String {
+    s.lines().map(str::trim_end).collect::<Vec<_>>().join("\n")
+}
