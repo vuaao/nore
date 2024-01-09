@@ -144,7 +144,14 @@ f_install_clang_format() {
             echo "\tunknown operating system. Skipping." >&2
     esac
 }
-
+f_install_buf() {
+    f_print_installing_with_padding buf
+    f_needs_install "${DESTDIR}/${PREFIX}/bin/buf" || return 0
+    
+    curl -sSL "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-${UNAME_S}-${UNAME_M}" -o "${DESTDIR}/${PREFIX}/bin/buf"
+    chmod +x "${DESTDIR}/${PREFIX}/bin/buf"
+    f_print_done
+}
 f_ensure_tools
 f_ensure_dirs
 f_install_protoc
