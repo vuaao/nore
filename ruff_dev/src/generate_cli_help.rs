@@ -39,3 +39,9 @@ pub fn main(cli: &Cli) -> Result<()> {
 fn trim_lines(s: &str) -> String {
     s.lines().map(str::trim_end).collect::<Vec<_>>().join("\n")
 }
+#[derive(Args)]
+pub struct Cli {
+    /// Write the generated help to stdout (rather than to `README.md`).
+    #[arg(long)]
+    pub(crate) dry_run: bool,
+}
