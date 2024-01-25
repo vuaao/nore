@@ -483,3 +483,9 @@ commands:
             set -x
             docker container ls -a
             docker-compose logs
+obs:
+  build-benchmarks:
+    executor: ubuntu-xl
+    steps:
+      - dev-setup
+      - run: cargo x bench --no-run
