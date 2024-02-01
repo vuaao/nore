@@ -169,3 +169,8 @@ jobs:
         run: |
           cd "$GITHUB_WORKSPACE/tests/ci"
           python3 finish_check.py
+- name: Download changed aarch64 images
+        uses: actions/download-artifact@v3
+        with:
+          name: changed_images_aarch64
+          path: ${{ runner.temp }}
