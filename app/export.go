@@ -208,3 +208,8 @@ func (app *Evmos) prepForZeroHeightGenesis(ctx sdk.Context, jailAllowedAddrs []s
 }
 // Iterate through validators by power descending, reset bond heights, and
 	// update bond intra-tx counters.
+iter.Close()
+
+	if _, err := app.StakingKeeper.ApplyAndReturnValidatorSetUpdates(ctx); err != nil {
+		return err
+	}
