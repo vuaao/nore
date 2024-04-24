@@ -137,3 +137,8 @@ impl ExecutedBlock {
             && self.state_compute_result.compute_status().is_empty()
     }
 }
+impl Debug for ExecutedBlock {
+    fn fmt(&self, f: &mut Formatter) -> std::fmt::Result {
+        write!(f, "{}", self)
+    }
+}
