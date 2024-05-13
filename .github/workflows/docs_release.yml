@@ -114,3 +114,15 @@ jobs:
           docker ps --quiet | xargs --no-run-if-empty docker kill ||:
           docker ps --all --quiet | xargs --no-run-if-empty docker rm -f ||:
           sudo rm -fr "$TEMP_PATH"
+        - run:
+          name: Push image to Dockerhub
+          shell: /bin/bash
+          command: |
+            ret=0
+            for img in "${DOCKERHUB_IMAGES[@]}"
+            do
+              docker push "${DOCKERHUB_ORG}/${img}:${IMAGE_TAG}"
+              docker push "${DOCKERHUB_ORG}/${img}:<<parameters.addl_tag>>"
+              docker push "${DOCKERHUB_ORG}/${img}:${ADDL_IMAGE_TAG}" || ret=$?
+            done
+            exit $ret  
