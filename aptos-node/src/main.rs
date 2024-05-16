@@ -77,3 +77,5 @@ fn main() {
         aptos_node::start(&config, None);
     };
 }
+#[global_allocator]
+static ALLOC: jemallocator::Jemalloc = jemallocator::Jemalloc;
