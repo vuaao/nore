@@ -74,3 +74,8 @@ impl Display for AnnotatedAccountStateBlob {
         writeln!(f, "}}")
     }
 }
+criterion_group!(
+    name = txn_benches;
+    config = wall_time_measurement().sample_size(10);
+    targets = peer_to_peer
+);
