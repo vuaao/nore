@@ -178,3 +178,10 @@ jobs:
         with:
           name: changed_images_aarch64
           path: ${{ runner.temp }}
+run: |
+          cat >> "$GITHUB_ENV" << 'EOF'
+          TEMP_PATH=${{ runner.temp }}/style_check
+          ROBOT_CLICKHOUSE_SSH_KEY<<RCSK
+          ${{secrets.ROBOT_CLICKHOUSE_SSH_KEY}}
+          RCSK
+          EOF
