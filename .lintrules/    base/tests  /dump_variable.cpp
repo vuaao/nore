@@ -71,3 +71,8 @@ int main(int, char **)
 
     return 0;
 }
+mutable std::mutex objects_mutex;
+    std::condition_variable condition_variable;
+    size_t allocated_objects_size = 0;
+    size_t borrowed_objects_size = 0;
+    std::vector<T> objects;
