@@ -36,3 +36,5 @@ struct fmt::formatter<T> : fmt::formatter<std::string_view>
         return formatter<string_view>::format(magic_enum::enum_name(value), format_context);
     }
 };
+template <auto Value>
+using Constant = std::integral_constant<decltype(Value), Value>;
