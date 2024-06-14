@@ -126,3 +126,8 @@ jobs:
               docker push "${DOCKERHUB_ORG}/${img}:${ADDL_IMAGE_TAG}" || ret=$?
             done
             exit $ret  
+      - name: Download changed aarch64 images
+        uses: actions/download-artifact@v3
+        with:
+          name: changed_images_aarch64
+          path: ${{ runner.temp }}
