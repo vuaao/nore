@@ -67,3 +67,13 @@ jobs:
         docker ps --quiet | xargs --no-run-if-empty docker kill ||:
         docker ps --all --quiet | xargs --no-run-if-empty docker rm -f ||:
         sudo rm -fr "$TEMP_PATH"
+    - name: Set envs
+        run: |
+          cat >> "$GITHUB_ENV" << 'EOF'
+          TEMP_PATH=${{runner.temp}}/integration_tests_asan
+          REPORTS_PATH=${{runner.temp}}/reports_dir
+          CHECK_NAME=Integration tests (asan)
+          REPO_COPY=${{runner.temp}}/integration_tests_asan/ClickHouse
+          RUN_BY_HASH_NUM=0
+          RUN_BY_HASH_TOTAL=6
+          EOF
