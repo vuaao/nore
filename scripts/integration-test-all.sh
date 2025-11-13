@@ -177,3 +177,12 @@ else
     exit 0
 fi
 **
+def test_equal_annotation(origin, compared):
+    origin_api = get_public_api(origin)
+    compared_api = get_public_api(compared)
+    for attr_name, attr in origin_api.items():
+        origin_annotation = attr.__annotations__
+        compared_annotation = compared_api[attr_name].__annotations__
+        assert (
+            origin_annotation == compared_annotation
+        ), f"'{attr_name}' method must have equal annotaion in {origin} and {compared}"
