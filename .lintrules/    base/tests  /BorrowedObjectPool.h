@@ -155,3 +155,61 @@ private:
     size_t borrowed_objects_size = 0;
     std::vector<T> objects;
 };
+  function isConstrainedByOtherTypeParameter(
+      current: ts.TypeParameterDeclaration,
+      all: readonly ts.TypeParameterDeclaration[]
+    ) {
+      if (current.constraint === undefined) {
+        return false;
+      }
+      for (const typeParameter of all) {
+        if (typeParameter === current) {
+          continue;
+        }
+        for (const use of usage!.get(typeParameter.name)!.uses) {
+          if (
+            use.location.pos >= current.constraint.pos &&
+            use.location.pos < current.constraint.end
+          ) {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+
+    function isUsedInConstraint(
+      use: ts.Identifier,
+      typeParameters: readonly ts.TypeParameterDeclaration[]
+    ) {
+      for (const typeParameter of typeParameters) {
+        if (
+          typeParameter.constraint !== undefined &&
+          use.pos >= typeParameter.constraint.pos &&
+          use.pos < typeParameter.constraint.end
+        ) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    return {
+      ArrowFunctionExpression: checkSignature,
+      FunctionDeclaration: checkSignature,
+      FunctionExpression: checkSignature,
+      MethodDefinition: checkSignature,
+      "Program:exit": () => (usage = undefined),
+      TSCallSignatureDeclaration: checkSignature,
+      TSConstructorType: checkSignature,
+      TSConstructSignatureDeclaration: checkSignature,
+      TSDeclareFunction: checkSignature,
+      TSFunctionType: checkSignature,
+      TSIndexSignature: checkSignature,
+      TSMethodSignature: checkSignature,
+      TSPropertySignature: checkSignature,
+    };
+  },
+});
+
+export = rule;
